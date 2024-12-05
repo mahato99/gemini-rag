@@ -84,13 +84,14 @@ def create_qa_chain(vector_store):
     try:
         # Use Gemini 1.5 Pro model
         llm = ChatGoogleGenerativeAI(
+            #model="gemini-1.5-flash", 
             model="gemini-1.5-pro-latest", 
             temperature=0.1, 
             convert_system_message_to_human=True,
             # Optional: Add additional configuration for 1.5 Pro
             model_kwargs={
-                "max_output_tokens": 8192,  # Leverage 1.5 Pro's large context window
-                "top_k": 40,
+                "max_output_tokens": 8192,  
+                "top_k": 10,
                 "top_p": 0.95
             }
         )
@@ -135,7 +136,7 @@ def main():
         return
     
     # Example query
-    query = "What is the annual revenue of the company?"
+    query = "What is the annual revenue of the company for the last two years?"
     
     try:
         # Run query

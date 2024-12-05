@@ -1,4 +1,4 @@
-# PDF Question-Answering Application
+# PDF Chatbot using Langchain and Google Gemini 
 
 ## Overview
 This application enables question-answering over PDF documents using Google's Gemini AI and LangChain, with vector-based document retrieval.
