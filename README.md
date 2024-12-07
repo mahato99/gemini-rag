@@ -32,9 +32,15 @@ pip install -r requirements.txt
 - Source document tracking
 
 ## Usage
+- For Basic RAG
 ```python
 python rag.py
 ```
+- For Multi PDF RAG with Gradio
+```python
+python gradio_rag.py
+```
+
 
 ## Customization
 - Change embedding/language models

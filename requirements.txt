@@ -1,3 +1,4 @@
+aiofiles==23.2.1
 aiohappyeyeballs==2.4.4
 aiohttp==3.11.9
 aiosignal==1.3.1
@@ -19,6 +20,7 @@ dataclasses-json==0.6.7
 Deprecated==1.2.15
 durationpy==0.9
 fastapi==0.115.5
+ffmpy==0.4.0
 filelock==3.16.1
 filetype==1.2.0
 flatbuffers==24.3.25
@@ -31,6 +33,8 @@ google-auth==2.36.0
 google-auth-httplib2==0.2.0
 google-generativeai==0.8.3
 googleapis-common-protos==1.66.0
+gradio==5.8.0
+gradio_client==1.5.1
 grpcio==1.68.1
 grpcio-status==1.68.1
 h11==0.14.0
@@ -44,6 +48,7 @@ humanfriendly==10.0
 idna==3.10
 importlib_metadata==8.5.0
 importlib_resources==6.4.5
+Jinja2==3.1.4
 jsonpatch==1.33
 jsonpointer==3.0.0
 kubernetes==31.0.0
@@ -54,6 +59,7 @@ langchain-google-genai==2.0.6
 langchain-text-splitters==0.3.2
 langsmith==0.1.147
 markdown-it-py==3.0.0
+MarkupSafe==2.1.5
 marshmallow==3.23.1
 mdurl==0.1.2
 mmh3==5.0.1
@@ -77,6 +83,8 @@ opentelemetry-util-http==0.49b2
 orjson==3.10.12
 overrides==7.7.0
 packaging==24.2
+pandas==2.2.3
+pillow==11.0.0
 posthog==3.7.4
 propcache==0.2.1
 proto-plus==1.25.0
@@ -86,6 +94,7 @@ pyasn1_modules==0.4.1
 pydantic==2.10.2
 pydantic-settings==2.6.1
 pydantic_core==2.27.1
+pydub==0.25.1
 Pygments==2.18.0
 pyparsing==3.2.0
 pypdf==5.1.0
@@ -94,12 +103,17 @@ PyPika==0.48.9
 pyproject_hooks==1.2.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
+python-multipart==0.0.19
+pytz==2024.2
 PyYAML==6.0.2
 requests==2.32.3
 requests-oauthlib==2.0.0
 requests-toolbelt==1.0.0
 rich==13.9.4
 rsa==4.9
+ruff==0.8.2
+safehttpx==0.1.6
+semantic-version==2.10.0
 shellingham==1.5.4
 six==1.16.0
 sniffio==1.3.1
@@ -108,10 +122,12 @@ starlette==0.41.3
 sympy==1.13.3
 tenacity==9.0.0
 tokenizers==0.21.0
+tomlkit==0.13.2
 tqdm==4.67.1
 typer==0.14.0
 typing-inspect==0.9.0
 typing_extensions==4.12.2
+tzdata==2024.2
 uritemplate==4.1.1
 urllib3==2.2.3
 uvicorn==0.32.1
