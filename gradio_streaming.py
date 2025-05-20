@@ -14,40 +14,36 @@ if not GOOGLE_API_KEY:
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Create the generative model
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
 async def generate_word_streaming_response(prompt):
     """
-    Generate a streaming response from the Gemini API, word by word.
+    Generate a streaming response from the Gemini API, yielding accumulated text chunks.
     
     Args:
         prompt (str): The user's input text
     
     Yields:
-        str: Incremental words of the generated response
+        str: Accumulated parts of the generated response
     """
     try:
         # Use streaming generation
-        response = model.generate_content(prompt, stream=True)
+        response_stream = model.generate_content(prompt, stream=True)
         
-        # Buffer to accumulate partial words
-        current_response = ""
-        
-        for chunk in response:
-            if chunk.parts:
-                # Split the new chunk into words
-                new_text = chunk.text
-                words = new_text.split()
-                
-                # Yield words incrementally
-                for word in words:
-                    current_response += word + " "
-                    yield current_response.strip()
-                    await asyncio.sleep(0.1)  # Small delay to simulate word-by-word streaming
-        
-        # Ensure final response is fully displayed
-        if current_response:
-            yield current_response.strip()
+        full_response = ""
+        for chunk in response_stream:
+            # Standard way to get text from Gemini chunk
+            if hasattr(chunk, 'text') and chunk.text:
+                full_response += chunk.text
+                yield full_response
+            # Fallback if chunk.text is not present but parts are (less common for simple text)
+            elif hasattr(chunk, 'parts') and chunk.parts:
+                for part in chunk.parts:
+                    if hasattr(part, 'text') and part.text:
+                        full_response += part.text
+                        yield full_response
+        # The loop should handle yielding the complete response progressively.
+        # A final yield might be redundant if all chunks are processed and yielded.
     
     except Exception as e:
         yield f"An error occurred: {str(e)}"
