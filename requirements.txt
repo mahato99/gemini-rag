@@ -131,7 +131,6 @@ tzdata==2024.2
 uritemplate==4.1.1
 urllib3==2.2.3
 uvicorn==0.32.1
-uvloop==0.21.0
 watchfiles==1.0.0
 websocket-client==1.8.0
 websockets==14.1

@@ -1,4 +1,41 @@
+
+# Environment variables and secrets
 .env
-/geminienv/*
-/geminienv
-ril.pdf
+.env.*
+!.env.example
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# ChromaDB local storage
+chroma_db/
+chroma/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploaded private documents
+*.pdf
